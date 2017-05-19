@@ -9,6 +9,8 @@ args
   .option(['h', 'hostname'], 'Hostname to listen on [$HOSTNAME or 0.0.0.0]', require('hostenv').HOSTNAME || process.env.WEBSITE_HOSTNAME || '0.0.0.0')
   .option(['c', 'channels'], 'One or more comma-separated channel names to allow single-channel guests [$SLACK_CHANNELS]', process.env.SLACK_CHANNELS)
   .option(['i', 'interval'], 'How frequently (ms) to poll Slack [$SLACK_INTERVAL or 5000]', process.env.SLACK_INTERVAL || 5000)
+  .option(['w', 'webhook'], 'Webhook URL to send a POST request, when a new slack account is created')
+  .option(['k', 'st2apikey'], 'ST2 API Key for webhook')
   .option(['P', 'path'], 'Path to serve slackin under', '/')
   .option(['s', 'silent'], 'Do not print out warns or errors')
   .option(['x', 'cors'], 'Enable CORS for all routes')
